@@ -18,21 +18,10 @@ package com.example.androiddevchallenge.ui.screens
 import androidx.annotation.StringRes
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.scrollable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.paddingFromBaseline
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.FabPosition
-import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.*
 import androidx.compose.material.FloatingActionButtonDefaults.elevation
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.PlayArrow
@@ -53,7 +42,6 @@ import com.example.androiddevchallenge.ui.components.EditText
 import com.example.androiddevchallenge.ui.theme.typography
 import dev.chrisbanes.accompanist.insets.navigationBarsHeight
 import dev.chrisbanes.accompanist.insets.navigationBarsPadding
-import java.util.Locale
 
 private enum class HomeTab(
     @StringRes val title: Int,
@@ -101,7 +89,7 @@ private fun HomeBottomBar(
                 icon = { Icon(tab.icon, null, Modifier.size(18.dp)) },
                 label = {
                     Text(
-                        text = stringResource(tab.title).toUpperCase(Locale.getDefault()),
+                        text = stringResource(tab.title).uppercase(),
                         style = typography.h2
                     )
                 },
@@ -143,7 +131,7 @@ fun HomeTabContent(modifier: Modifier = Modifier) {
 @Composable
 fun SectionTitle(@StringRes title: Int) =
     Text(
-        text = stringResource(title).toUpperCase(Locale.getDefault()),
+        text = stringResource(title).uppercase(),
         modifier = Modifier.paddingFromBaseline(top = 40.dp, bottom = 8.dp).padding(start = 16.dp),
         color = MaterialTheme.colors.onBackground,
         style = typography.h2

@@ -15,12 +15,7 @@
  */
 package com.example.androiddevchallenge.ui.screens
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.paddingFromBaseline
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -41,7 +36,6 @@ import com.example.androiddevchallenge.ui.components.MainButton
 import com.example.androiddevchallenge.ui.components.SurfaceWithBackgroundImage
 import com.example.androiddevchallenge.ui.theme.typography
 import dev.chrisbanes.accompanist.insets.statusBarsPadding
-import java.util.Locale
 
 @Composable
 fun LoginScreen(onLoginButtonClick: () -> Unit) {
@@ -57,7 +51,7 @@ fun LoginScreen(onLoginButtonClick: () -> Unit) {
         ) {
             Text(
                 modifier = Modifier.paddingFromBaseline(top = 200.dp, bottom = 32.dp),
-                text = stringResource(R.string.log_in).toUpperCase(Locale.getDefault()),
+                text = stringResource(R.string.log_in).uppercase(),
                 style = typography.h1
             )
             EditText(
